@@ -27,12 +27,17 @@ import kotlin.math.roundToInt
 
 @Composable
 fun ChromaticPicker(
+    modifier: Modifier = Modifier,
+    showHue: Boolean = true,
+    showSaturation: Boolean = true,
+    showBrightness: Boolean = true,
+    showColorCode: Boolean = true,
     onColorChange: (Color) -> Unit
 ) {
     val chromaticState = rememberChromaticState()
     var selectedColor by remember { mutableStateOf(Color.Red) }
     Column(
-        modifier = Modifier
+        modifier = modifier
             .fillMaxWidth()
             .padding(16.dp)
     ) {
@@ -70,34 +75,42 @@ fun ChromaticPicker(
                     .width(60.dp)
                     .background(selectedColor, RoundedCornerShape(10.dp))
             )
-            Text(
-                text = "H:" + (chromaticState.value.hue).toInt(),
-                style = TextStyle(
-                    color = Color.Black,
-                    fontSize = 20.sp
+            if (showHue) {
+                Text(
+                    text = "H:" + (chromaticState.value.hue).toInt(),
+                    style = TextStyle(
+                        color = Color.Black,
+                        fontSize = 20.sp
+                    )
                 )
-            )
-            Text(
-                text = "S:" + (chromaticState.value.saturation * 100).toInt(),
-                style = TextStyle(
-                    color = Color.Black,
-                    fontSize = 20.sp
+            }
+            if (showSaturation) {
+                Text(
+                    text = "S:" + (chromaticState.value.saturation * 100).toInt(),
+                    style = TextStyle(
+                        color = Color.Black,
+                        fontSize = 20.sp
+                    )
                 )
-            )
-            Text(
-                text = "B:" + (chromaticState.value.brightness * 100).toInt(),
-                style = TextStyle(
-                    color = Color.Black,
-                    fontSize = 20.sp
+            }
+            if (showBrightness) {
+                Text(
+                    text = "B:" + (chromaticState.value.brightness * 100).toInt(),
+                    style = TextStyle(
+                        color = Color.Black,
+                        fontSize = 20.sp
+                    )
                 )
-            )
-            Text(
-                text = "#:" + selectedColor.toHex().replace("#", ""),
-                style = TextStyle(
-                    color = Color.Black,
-                    fontSize = 20.sp
+            }
+            if (showColorCode) {
+                Text(
+                    text = "#:" + selectedColor.toHex().replace("#", ""),
+                    style = TextStyle(
+                        color = Color.Black,
+                        fontSize = 20.sp
+                    )
                 )
-            )
+            }
         }
     }
 }
