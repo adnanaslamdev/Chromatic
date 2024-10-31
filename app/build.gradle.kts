@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.chromatic"
+    namespace = "com.adnanaslamdev.chromatic"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.chromatic"
+        applicationId = "com.adnanaslamdev.chromatic"
         minSdk = 24
         targetSdk = 34
         versionCode = 1

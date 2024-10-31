@@ -1,6 +1,5 @@
-package com.example.chromatic.ui.theme
+package com.adnanaslamdev.chromatic.ui.theme
 
-import android.app.Activity
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme

@@ -1,13 +1,11 @@
-import org.jetbrains.kotlin.config.JvmAnalysisFlags.useIR
-
 plugins {
-    alias(libs.plugins.android.library)
-    alias(libs.plugins.kotlin.android)
+    id("com.android.library")
+    id("org.jetbrains.kotlin.android")
     id("maven-publish")
 }
 
 android {
-    namespace = "com.example.chromatic"
+    namespace = "com.adnanaslamdev.chromatic"
     compileSdk = 34
 
     defaultConfig {
@@ -51,11 +49,13 @@ afterEvaluate {
     publishing {
         publications {
             create<MavenPublication>("release") {
-                from(components["release"])
-
                 groupId = "com.github.adnanaslamdev"
                 artifactId = "chromatic"
                 version = "1.0.0"
+
+                afterEvaluate {
+                    from(components["release"])
+                }
             }
         }
     }

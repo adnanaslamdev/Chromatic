@@ -1,4 +1,4 @@
-package com.example.chromatic.ui.theme
+package com.adnanaslamdev.chromatic.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

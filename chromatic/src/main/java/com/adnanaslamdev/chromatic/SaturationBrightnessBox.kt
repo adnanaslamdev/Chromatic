@@ -1,4 +1,4 @@
-package com.example.chromatic
+package com.adnanaslamdev.chromatic
 
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.gestures.detectDragGestures

@@ -1,4 +1,4 @@
-package com.example.chromatic
+package com.adnanaslamdev.chromatic
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf

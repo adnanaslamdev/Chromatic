@@ -1,4 +1,4 @@
-package com.example.chromatic
+package com.adnanaslamdev.chromatic
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
